@@ -68,7 +68,7 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  let apiKey = "d1a86552de255334f6117b348c4519bd";
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -100,18 +100,18 @@ function displayTemperature(response) {
 }
 
 function search(city) {
-  let apiKey = "d1a86552de255334f6117b348c4519bd";
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#searchInput");
+  let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
 
-let form = document.querySelector("#searchCity");
+let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("San Diego");
